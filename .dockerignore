@@ -1,0 +1,14 @@
+# Ignore all saved models
+models/
+
+# Ignore all summary information for TensorBoard
+Summaries/
+
+# Ignore all images
+*.png
+
+# Ignore virtual environment files
+mlenv/
+
+# Ignore VS code settings
+.vscode/
