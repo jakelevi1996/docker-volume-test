@@ -13,4 +13,6 @@ Once the image has been built, run using:
 
 To use a volume, such that the program saves data to a folder on the host (IE outside the container), use:
 
-``docker run -v `pwd`/dout:/app/dout -it jake-img``
+`docker run -v $(pwd)/dout:/app/dout -it jake-img`
+
+(In windows, replace `$(pwd)` with `%cd%`)
