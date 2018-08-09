@@ -110,6 +110,9 @@ plt.plot(x_train[y_train[:,0]==0, 0], x_train[y_train[:,0]==0, 1], 'bo',
 plt.contour(xx0, xx1, y_test.reshape(xx0.shape), [.2, .4, .6, .8], cmap='bwr')
 plt.grid(True)
 plt.axis('equal')
-plt.savefig("classification results.png")
+plt.savefig("dout/classification results.png")
 print("Graph saved")
 # plt.show()
+
+# Save results
+np.savetxt("dout/final loss.txt", loss_val)

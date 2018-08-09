@@ -59,5 +59,5 @@ RUN python -m pip install -r requirements.txt
 
 COPY . .
 
-# CMD ["python", "nnclassification.py"]
-CMD ["python", "printfs.py"]
+CMD ["python", "nnclassification.py"]
+# CMD ["python", "printfs.py"]
