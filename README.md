@@ -10,3 +10,7 @@ Simultaneously build the image, name it as "img" and run in a container using th
 Once the image has been built, run using:
 
 `docker run -it img`
+
+To use a volume, such that the program saves data to a folder on the host (IE outside the container), use:
+
+``docker run -v `pwd`/dout:/app/dout -it jake-img``
