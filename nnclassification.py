@@ -7,6 +7,7 @@ Created on Fri Jul 20 14:55:54 2018
 
 #Imports
 print("Starting imports...")
+import os
 import tensorflow as tf
 import numpy as np
 # Before importing pyplot, set the matplotlib backend to allow usage in Docker container
@@ -16,11 +17,16 @@ import matplotlib.pyplot as plt
 print("Creating model...")
 
 #Parameters
-num_epochs = int(3000)
+num_epochs = int(20)
 learning_rate = 0.01
 print_every = 1000
 logdir = "./Summaries/Classification"
 savedir = "./models/classification_model.ckpt"
+
+# Create directory for docker output
+docker_output_folder = "dout"
+if not os.path.isdir(docker_output_folder):
+    os.mkdir(docker_output_folder)
 
 
 # Create training data set
@@ -110,9 +116,9 @@ plt.plot(x_train[y_train[:,0]==0, 0], x_train[y_train[:,0]==0, 1], 'bo',
 plt.contour(xx0, xx1, y_test.reshape(xx0.shape), [.2, .4, .6, .8], cmap='bwr')
 plt.grid(True)
 plt.axis('equal')
-plt.savefig("dout/classification results.png")
+plt.savefig(docker_output_folder+"/classification results.png")
 print("Graph saved")
 # plt.show()
 
 # Save results
-np.savetxt("dout/final loss.txt", loss_val)
+np.savetxt(docker_output_folder+"/final loss.txt", [loss_val])

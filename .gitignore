@@ -12,3 +12,6 @@ mlenv/
 
 # Ignore VS code settings
 .vscode/
+
+# Ignore outputs
+dout/
