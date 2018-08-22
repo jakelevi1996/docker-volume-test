@@ -15,10 +15,8 @@ Once the image has been built, run using:
 docker run -it --rm volume-test
 ```
 
-To use a volume, such that the program saves data to a folder on the host
-(IE outside the container), use:
-
-`docker run -v $(pwd)/dout:/app/dout -it img`
+To use a volume, such that the program saves data to a folder named `dout` on
+the host (IE outside the container), use:
 
 ```bash
 docker run -it --rm -v $(pwd)/dout:/app/dout volume-test
